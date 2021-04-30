@@ -3,6 +3,8 @@
 from collections import Counter
 
 
+
+
 def getKeyWordsCount (list_data):
     total_keywords = []
     for data in list_data:
@@ -23,9 +25,11 @@ def getKeyWordsCount (list_data):
     print(c)
 
 
-def contarFrase (frase, list_data):
-    merged_desc = ""
+def contarFrase (buzzwords, list_data):
+    
     for data in list_data:
-        merged_desc += " " + data.description.lower()
-    c = merged_desc.count(frase)
-    return c
+        for bw in buzzwords:
+            desc = data.description.lower()
+            buzzwords[bw] += desc.count(bw.lower())
+    
+    return buzzwords
