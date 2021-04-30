@@ -168,9 +168,9 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
-  font-size: 15px;
+  font-size: 40px;
   font-weight: 500;
-  color: #fff;
+  color: #47b2e4;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -189,14 +189,14 @@ h1, h2, h3, h4, h5, h6 {
   padding: 8px 20px;
   margin-left: 30px;
   border-radius: 50px;
-  color: #fff;
+  color: #47b2e4;
   font-size: 14px;
   border: 2px solid #47b2e4;
   font-weight: 600;
 }
 
 .navbar .getstarted:hover {
-  color: #fff;
+  color: #47b2e4;
   background: #31a9e1;
 }
 
