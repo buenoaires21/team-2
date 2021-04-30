@@ -15,6 +15,9 @@ chromedriver_path = str(Path(__file__).parent / "chromedriver")
 
 data_list = []
 
+job_amount = int(input("Enter the number of jobs to scrape: "))
+job_name = str(input("Enter the name of the job: "))
+
 # Change root logger level (default is WARN)
 logging.basicConfig(level = logging.WARN)
 
@@ -53,11 +56,11 @@ scraper.on(Events.END, on_end)
 
 queries = [
     Query(
-        query='Ingeniero',
+        query=job_name,
         options=QueryOptions(
             locations=['Argentina'],
             optimize=False,
-            limit=5,
+            limit=job_amount,
             filters=QueryFilters(
                 company_jobs_url= None,  # Filter by companies
                 relevance=RelevanceFilters.RECENT,
