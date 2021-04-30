@@ -554,7 +554,6 @@ section {
     padding-bottom: 20px;
     position: relative;
     color: #f8ae35;
-    background:
 }
 
 .section-title h2::before {
@@ -618,7 +617,7 @@ section {
 --------------------------------------------------------------*/
 
 .about .content p {
-    font-size: 20px;
+    font-size: 24px;
     color: #848484;
 }
 
