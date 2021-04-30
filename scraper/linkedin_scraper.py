@@ -1,4 +1,6 @@
-#installation pip install linkedin-jobs-scraper to install first
+
+# First install:
+# installation pip install linkedin-jobs-scraper to
 
 import logging
 from linkedin_jobs_scraper import LinkedinScraper
@@ -7,8 +9,11 @@ from linkedin_jobs_scraper.query import Query, QueryOptions, QueryFilters
 from linkedin_jobs_scraper.filters import RelevanceFilters, TimeFilters, TypeFilters, ExperienceLevelFilters, RemoteFilters
 from pathlib import Path
 
+from db_functions import *
+
 chromedriver_path = str(Path(__file__).parent / "chromedriver")
 
+data_list = []
 
 # Change root logger level (default is WARN)
 logging.basicConfig(level = logging.WARN)
@@ -17,8 +22,10 @@ logging.basicConfig(level = logging.WARN)
 def on_data(data: EventData):
     #print('[ON_DATA]', data.title, data.company, data.date, data.link, len(data.description))
     print('Data scraped:', data.title, data.company, data.date, data.link, len(data.description))
-    
+    print(type(data))
 
+    data_list.append(data)
+    formatted_data = preformat_data(data)
 
 def on_error(error):
     print('[ON_ERROR]', error)
@@ -27,6 +34,9 @@ def on_error(error):
 def on_end():
     #print('[ON_END]')
     print('Ended.')
+    for data in data_list:
+        print('Data scraped:', data.title, data.company, data.date, data.link, len(data.description))
+    save_to_db(data_list)
 
 
 scraper = LinkedinScraper(
