@@ -15,7 +15,9 @@ logging.basicConfig(level = logging.WARN)
 
 
 def on_data(data: EventData):
-    print('[ON_DATA]', data.title, data.company, data.date, data.link, len(data.description))
+    #print('[ON_DATA]', data.title, data.company, data.date, data.link, len(data.description))
+    print('Data scraped:', data.title, data.company, data.date, data.link, len(data.description))
+    
 
 
 def on_error(error):
@@ -23,7 +25,8 @@ def on_error(error):
 
 
 def on_end():
-    print('[ON_END]')
+    #print('[ON_END]')
+    print('Ended.')
 
 
 scraper = LinkedinScraper(
@@ -41,15 +44,9 @@ scraper.on(Events.END, on_end)
 
 queries = [
     Query(
+        query='Ingeniero',
         options=QueryOptions(
-            optimize=True,  # Blocks requests for resources like images and stylesheet
-            limit=27  # Limit the number of jobs to scrape ---- Adjust to liking
-        )
-    ),
-    Query(
-        query='Engineer',
-        options=QueryOptions(
-            locations=['United States'],
+            locations=['Argentina'],
             optimize=False,
             limit=5,
             filters=QueryFilters(
