@@ -22,7 +22,7 @@ logging.basicConfig(level = logging.WARN)
 def on_data(data: EventData):
     #print('[ON_DATA]', data.title, data.company, data.date, data.link, len(data.description))
     print('Data scraped:', data.title, data.company, data.date, data.link, len(data.description))
-    print(type(data))
+    #print(type(data))
 
     data_list.append(data)
     formatted_data = preformat_data(data)
@@ -32,11 +32,10 @@ def on_error(error):
 
 
 def on_end():
-    #print('[ON_END]')
     print('Ended.')
     for data in data_list:
         print('Data scraped:', data.title, data.company, data.date, data.link, len(data.description))
-    save_to_db(data_list)
+    save_to_text_file(data_list)
 
 
 scraper = LinkedinScraper(
