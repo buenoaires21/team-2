@@ -810,6 +810,11 @@ section {
 # Skills
 --------------------------------------------------------------*/
 
+.skills .content p {
+    font-size: 20px;
+    color: #848484;
+}
+
 .skills .content h3 {
     font-weight: 700;
     font-size: 32px;
