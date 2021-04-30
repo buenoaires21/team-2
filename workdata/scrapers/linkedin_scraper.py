@@ -36,9 +36,9 @@ def job_data_list():
             "date": data.date,
             "seniority_level": data.seniority_level,
             "job_function": data.job_function,
-            "employment_type" = data.employment_type,
-            "industries" = data.industries,
-            "processed" = data.processed
+            "employment_type": data.employment_type,
+            "industries": data.industries,
+            "processed": data.processed
         }
 
         data_list.append(data_dict)

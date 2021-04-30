@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='job',
+            name='Job',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(blank=True, max_length=200, null=True)),
@@ -25,6 +25,7 @@ class Migration(migrations.Migration):
                 ('job_function', models.CharField(blank=True, max_length=200, null=True)),
                 ('employment_type', models.CharField(blank=True, max_length=200, null=True)),
                 ('industries', models.CharField(blank=True, max_length=200, null=True)),
+                ('processed', models.BooleanField(default=False))
             ],
         ),
     ]
