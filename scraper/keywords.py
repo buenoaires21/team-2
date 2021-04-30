@@ -21,3 +21,11 @@ def getKeyWordsCount (list_data):
     print(total_keywords)
     c = Counter(total_keywords)
     print(c)
+
+
+def contarFrase (frase, list_data):
+    merged_desc = ""
+    for data in list_data:
+        merged_desc += " " + data.description.lower()
+    c = merged_desc.count(frase)
+    return c
