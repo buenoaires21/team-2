@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .load_data import load_job_data
 
 from .forms import LoadData
+from .queries import data
 
 DATA_TO_BE_FETCHED = [("dev ops", 10),("contador", 10),("administracion", 10), ("diseno", 10)]
 
@@ -35,3 +36,9 @@ def load_data_form(request):
 
 def load_data_success(request):
     return render(request, 'workdata/load_data_success.html')
+
+
+def index(request):
+    dict_of_dicts = data()
+
+    return render(request, 'workdata/index.html', {"resp":dict_of_dicts})

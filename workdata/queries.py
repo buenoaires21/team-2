@@ -1,4 +1,4 @@
-from models import Job
+from .models import Job
 
 def data():
 
@@ -47,5 +47,6 @@ def data():
             hist[word] = professionals.filter(description__contains=word).count()
         res[profession] = hist
 
+    return res
 
 
