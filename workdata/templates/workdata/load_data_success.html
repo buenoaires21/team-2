@@ -1,0 +1,11 @@
+<h1>Data loaded successfully!</h1>
+
+<p>Load more data <a href="{% url 'load-data' %}">here</a></p>
+
+
+{% if query %}
+    <p>There was a query</p>
+{% endif %}
+{% if limit %}
+    <p>There was a limit</p>
+{% endif %}

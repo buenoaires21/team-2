@@ -13,4 +13,8 @@ class Job(models.Model):
     employment_type = models.CharField(max_length=200, null=True, blank=True)
     industries = models.CharField(max_length=200, null=True, blank=True)
     processed = models.BooleanField(default=False)
+    query = models.CharField(max_length=200, null=True, blank=True)
 
+    def __str__(self):
+        return self.title
+    
