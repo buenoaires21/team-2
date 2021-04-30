@@ -49,14 +49,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
-                    <li class="dropdown"><a href="#"><span>Sectores</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#skills">Tecnología</a></li>
-                            <li><a href="#">Comercio</a></li>
-                            <li><a href="#">Construcción</a></li>
-                            <li><a href="#">Soft Skills</a></li>
-                        </ul>
-                    </li>
+                    <li><a class="nav-link scrollto active" href="#skills">Sectires</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -85,14 +78,14 @@
                         <p> <b>
                             En la siguiente seccion se encuentran los puestos y skills mas requeridos por el mercado laboral actual
                           </b>
-                            </p>
+                        </p>
 
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <p> <b>
                             No solo las habilidades prácticas son importantes! También acordate de la comunicación , puntualidad y actitud proactiva.
                           </b>
-                            </p>
+                        </p>
 
                     </div>
                 </div>
@@ -105,24 +98,27 @@
 
         <!-- ======= Skills 0 ======= -->
         <section id="skills" class="skills">
+
+            {% for sector in resp.keys() %}
+
             <div class="container" data-aos="fade-up">
 
                 <div class="row">
 
                     <div class="col-sm-4 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
                         <div class="content">
-                            <h3 class="text-right">Tecnología</h3>
+                            <h3 class="text-right">{{sector}}</h3>
                         </div>
                     </div>
                     <div class="col-sm-8 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-                        <h3>  <b> Estos son los skills mas valorados en el rubro </b> </h3>
+                        <h3> <b> Estos son los skills mas valorados en el rubro </b> </h3>
                         <p class="fst-italic">
-                           <b> Los valores estan represantados de 0 a 100, donde 100 es el mas requerido </b>
+                            <b> Los valores estan represantados de 0 a 100, donde 100 es el mas requerido </b>
                         </p>
 
                         <div class="skills-content">
 
-                            {% for keyword in resp.keys() %}
+                            {% for keyword in sector[resp].keys() %}
 
                             <div class="progress">
                                 <span class="skill">{{keyword}} <i class="val">{{resp[keyword]}}</i></span>
@@ -138,6 +134,8 @@
 
                     </div>
                 </div>
+                {% endfor %}
+
 
             </div>
 
