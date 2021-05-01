@@ -40,5 +40,6 @@ def load_data_success(request):
 
 def index(request):
     dict_of_dicts = data()
+    
 
     return render(request, 'workdata/index.html', {"resp":dict_of_dicts})

@@ -45,6 +45,13 @@ def data():
         hist = {}
         for word in d[profession]:
             hist[word] = professionals.filter(description__contains=word).count()
+        
+        for word in hist:
+            try:
+                hist[word] = int(hist[word] / max(hist.values()) * 100) 
+            except:
+                hist[word] = 0                    
+
         res[profession] = hist
 
     return res
