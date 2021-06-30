@@ -26,3 +26,5 @@ We do the data collection with a web scraping algorithm implemented in python, b
 
 Once all the data is saved, we count the amount of occurrences of determined buzzwords in the job descriptions in the database. The buzzwords we use were determined by the team, but in the future we could implement machine learning algorithms to detect them automatically and connect them with the desired abilities.
 We could implement a more robust algorithm as well, to determine the importance of said skill. On top of calculating the frequency of the buzzwords, we could estimate the amount of jobs that are looking for said skill as well, and compute a weighted ranking to predict better results.
+
+##### The code ("Code") in this repository was created solely by the student teams during a coding competition hosted by JPMorgan Chase Bank, N.A. ("JPMC").						JPMC did not create or contribute to the development of the Code.  This Code is provided AS IS and JPMC makes no warranty of any kind, express or implied, as to the Code,						including but not limited to, merchantability, satisfactory quality, non-infringement, title or fitness for a particular purpose or use.
